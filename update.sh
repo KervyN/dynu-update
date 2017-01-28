@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd "${0%/*}"
+
 source main.conf
 source $CREDENTIALS
 
@@ -28,5 +30,5 @@ for DOMAIN in "${DOMAINS[@]}"; do
 	if [ "$UPDATEV4" = "" ] && [ "$UPDATEV6" = "" ]; then
 		continue
 	fi
-	curl "https://api.dynu.com/nic/update?hostname=$DOMAIN$UPDATEV4$UPDATEV6&username=$UPDATEUSER&password=$UPDATEPASS"
+	curl -s "https://api.dynu.com/nic/update?hostname=$DOMAIN$UPDATEV4$UPDATEV6&username=$UPDATEUSER&password=$UPDATEPASS"
 done
