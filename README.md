@@ -1,4 +1,4 @@
-# Installation
+#### Installation
 Just clone this repo
 
-# Configuratio
+#### Configuratio
